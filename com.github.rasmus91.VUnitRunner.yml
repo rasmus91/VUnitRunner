@@ -1,0 +1,29 @@
+app-id: com.github.rasmus91.vunitrun
+
+runtime: io.elementary.Platform
+
+runtime-version: '6'
+
+sdk: io.elementary.Sdk
+
+command: com.github.rasmus91.vunitrun
+
+finish-args:
+  - '--share=ipc'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+  - '--filesystem=home'
+
+modules:
+modules:
+  - name: libvunit
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://github.com/rasmus91/libvunit
+  - name: vunitrunner
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .
+

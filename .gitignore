@@ -1,0 +1,5 @@
+*~
+valacompiler
+build/*
+builddir/*
+.flatpak-builder/
